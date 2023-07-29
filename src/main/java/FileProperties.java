@@ -1,31 +1,12 @@
 public class FileProperties {
-    private String name;
-    private long size;
-    private long compressedSize;
-    private int compressionMethod;
+    private final String name;
+    private final long size;
+    private final long compressedSize;
 
-    public FileProperties(String name, long size, long compressedSize, int compressionMethod) {
+    public FileProperties(String name, long size, long compressedSize) {
         this.name = name;
         this.size = size;
         this.compressedSize = compressedSize;
-        this.compressionMethod = compressionMethod;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public long getSize() {
-        return size;
-    }
-
-    public long getCompressedSize() {
-        return compressedSize;
-    }
-
-    public int getCompressionMethod() {
-        return compressionMethod;
     }
 
     public long getCompressionRatio() {

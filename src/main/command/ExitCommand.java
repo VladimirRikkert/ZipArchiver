@@ -1,7 +1,7 @@
 public class ExitCommand implements Command {
 
     @Override
-    public void execute() throws Exception {
+    public void execute()  {
         ConsoleHelper.writeMessage("До встречи!");
     }
 }

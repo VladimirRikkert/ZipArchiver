@@ -150,10 +150,10 @@ public class ZipFileManager {
             for (Path file : absolutePathList) {
                 if (Files.isRegularFile(file)) {
                     if (archiveFiles.contains(file.getFileName()))
-                        ConsoleHelper.writeMessage(String.format("Файл '%s' уже существует в архиве.", file.toString()));
+                        ConsoleHelper.writeMessage(String.format("Файл '%s' уже существует в архиве.", file));
                     else {
                         addNewZipEntry(zipOutputStream, file.getParent(), file.getFileName());
-                        ConsoleHelper.writeMessage(String.format("Файл '%s' добавлен в архиве.", file.toString()));
+                        ConsoleHelper.writeMessage(String.format("Файл '%s' добавлен в архиве.", file));
                     }
                 } else
                     throw new PathIsNotFoundException();
@@ -178,7 +178,7 @@ public class ZipFileManager {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 copyData(zipInputStream, baos);
 
-                FileProperties file = new FileProperties(zipEntry.getName(), zipEntry.getSize(), zipEntry.getCompressedSize(), zipEntry.getMethod());
+                FileProperties file = new FileProperties(zipEntry.getName(), zipEntry.getSize(), zipEntry.getCompressedSize());
                 files.add(file);
                 zipEntry = zipInputStream.getNextEntry();
             }

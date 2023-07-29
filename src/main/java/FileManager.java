@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileManager {
-    private Path rootPath;
-    private List<Path> fileList;
+    private final Path rootPath;
+    private final List<Path> fileList;
 
     public FileManager(Path rootPath) throws IOException {
         this.rootPath = rootPath;
